@@ -142,8 +142,9 @@ input[type="radio"]
     display: none;
 }
 
-.alertError {
-		margin: 9% 0 0 0;
+.alert {
+		text-align: center;
+  	margin-top: 29%;
 }
 
 .alert-error {
