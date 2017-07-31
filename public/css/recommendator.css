@@ -4,41 +4,41 @@ div.ex1{
 	margin-top: 50px;
 	margin-bottom: 10px;
 	margin-right: 400px;
-	margin-left: 190px; 
+	margin-left: 190px;
 }
 div.ex2 { height:50px; /* or whatever width you want. */
    max-height:50px; /* or whatever width you want. */
-   
+
 	margin-top: 50px;
 	margin-bottom: 40px;
 	margin-right: 200px;
-	margin-left: 250px;   
+	margin-left: 250px;
 }
 
 div.ex4 {
 	/*margin-right: 200px;*/
-	/*margin-left: 250px; */  
+	/*margin-left: 250px; */
 }
 div.ex5 {
 	margin-right: 40px;
-	margin-left: 40px;   
+	margin-left: 40px;
 }
 div.ex6 {
 	margin-top: 5px;
 	margin-bottom: 10px;
 	margin-right: 400px;
-	margin-left: 470px;   
+	margin-left: 470px;
 }
 tr.border_bottom td{
 	border-bottom:1pt solid black;
 }
 
 .table {
-	border-collapse: collapse; 
+	border-collapse: collapse;
 	margin-left: 30px;
 	margin-bottom: 4px;
 	color:#7373E5;
-    
+
 }
 tr.ex3{
 
@@ -83,17 +83,17 @@ div button {
         -moz-border-radius: 5px;
         border-radius: 5px;
 }
-    
+
 .spacer {
         display: block;
 }
-    
+
 #progress-bar {
         width: 100px;
         background: #cccccc;
         position: relative;
 }
-    
+
 #progress-bar-percentage {
         background: #4CAF50;
         padding: 5px 0px;
@@ -140,6 +140,10 @@ input[type="radio"]
 
 #repeatPassword_alert {
     display: none;
+}
+
+.alertError {
+		margin: 10% 0 0 0;
 }
 
 .alert-error {
