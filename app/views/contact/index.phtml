@@ -1,0 +1,36 @@
+<?php use Phalcon\Tag as Tag; ?>
+<?php echo $this->getContent() ?>
+<div class="container contacts-index">
+    <div class="page-header">
+        <h2><b><?php echo $t["Contact Us"] ?></b></h2>
+    </div>
+    <p><?php echo $t["Send us a message and let us know how we can help. Please be as descriptive as possible as it will help us serve you better."]?></p>
+    
+        <?php echo Tag::form(array(
+            'contact/send',
+            'class' => 'col-md-4',
+        )) ?>
+        <div class="form-group required">
+            <label class = "control-label" for="name"><?php echo $t["Your Full Name"]?></label>
+            <?php echo Tag::textField(array('name', 'class' => 'input-xlarge form-control')) ?>
+            <p class="help-block">(<?php echo $t["required"]?>)</p>
+            <div class="form-group required">
+                <label class = "control-label" for="email"><?php echo $t["Email Address"]?></label>
+                <?php echo Tag::textField(array('email', 'class' => 'input-xlarge form-control')) ?>
+                <p class="help-block">(<?php echo $t["required"]?>)</p>
+
+            </div>
+            <div class="form-group required">
+                <label class = "control-label" for="comments"><?php echo $t["Comments"]?></label>
+                <?php echo Tag::textArea(array('comments', 'class' => 'input-xlarge form-control')) ?>
+                <p class="help-block">(<?php echo $t["required"]?>)</p>
+            </div>
+	    <div class="g-recaptcha" data-sitekey="6Lfx1hUUAAAAAKsckgIl4_IYG9P-NN2LZR3jncRL"></div>
+            <br>
+            <div style = 'padding-bottom:50px'>
+                <?php echo Tag::submitButton(array($t['Send'], 'class' => 'btn btn-success btn-large pull-right')) ?>
+            </div>
+            </form>
+        </div></br></br></br></br>
+
+</div>

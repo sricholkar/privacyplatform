@@ -1,0 +1,21 @@
+<?php use Phalcon\Tag as Tag ?>
+<div class="hero-unit">
+<p>
+    <h2><b><?php echo $gadget?>:</b></h2></br>
+</p>
+
+<p><h3>Disclaimer</h3><p></br>
+<p> This is a survey related to user's privacy, upon completing the survey the system will provide the most suitable devices recommended for the users. On some pages you have the possibility to enter personal or business data (e. g. e-mail addresses, names, postal addresses, etc.). The disclosure of this data is voluntary. If technically feasible and where reasonable, all services offered can be used without disclosing personal information or by use of anonymised data or aliases. <b>This survey is conducted for educational purpose only. None of the provided user data will be use for commercial purposes</b>. </p>
+
+
+<p> Click continue if you want to use this. </P> </br>
+	<?php echo Tag::form(array('surveyreader/continue','class' => 'form-horizontal')) ?>
+	<input type="hidden" name="gadget" value="<?php echo $gadget?>">
+	
+           <td><p><?php echo Tag::submitButton(array("continue", 'class' => 'btn btn-primary btn-success')) ?></p></td>
+        
+        </fieldset>
+        </form>
+
+</div>
+

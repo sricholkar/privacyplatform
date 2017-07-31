@@ -1,0 +1,54 @@
+<?php use Phalcon\Tag as Tag; ?>
+
+<?php echo $this->getContent() ?>
+
+<div class="login-or-signup">
+<!--    --><?php
+//    echo Phalcon\Tag::imageInput(array("src" => "/privacyplatform/img/transparent-logo.png", 'class' => 'login-logo'));
+//    ?>
+    <div class="row">
+        <div class="jumbotron login_jumbo" align="center">
+            <div>
+            <?php echo Tag::form(array('session/start')) ?>
+            <div class="form-group">
+                <h1 class="header" style="color:white;margin-top: -100px; font-family: 'Times New Roman'"><?php echo $t['LogIn'] ?></h1>
+                <hr>
+                <?php echo Tag::textField(array(
+                    'email',
+                    'size' => 36,
+                    'placeholder' =>$t['Username/Email'],
+                    'class' => 'login-email',
+                )) ?>
+            </div>
+            <div class="form-group">
+                <?php echo Tag::passwordField(array(
+                    'password',
+                    'size' => 36,
+                    'placeholder' => $t['Password'],
+                    'class' => 'login-pass'
+                )) ?>
+            </div>
+	   
+	    <!-- If required a captcha on Login Page, then uncommen this and in Session Controller too
+               	<div class="g-recaptcha login-recaptcha"  data-sitekey="6Lfx1hUUAAAAAKsckgIl4_IYG9P-NN2LZR3jncRL" ></div>
+             -->
+           
+	    <div>
+		<p style="font-size: 16px">
+            <?php echo Tag::submitButton(array(
+                $t['Login'],
+                'class' => 'btn btn-success btn-large',
+                'style' => 'width:310px;height:35px;margin-top:10px;'
+            )) ?>
+                <p style="font-size: 16px;color: white">
+             <td>&nbsp</td><?php echo $t["Don't have an account yet?"]?> <b> <?php echo Tag::linkTo(array(
+                        'session/register',
+                        $t['SignUp'],
+                        'class' => 'signUp'
+                    )) ?> </b><?php echo $t['here']?></p> </p>
+        </div>
+        </div>
+        </div>
+    </div>
+</div>
+

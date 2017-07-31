@@ -1,0 +1,42 @@
+<?php use Phalcon\Tag as Tag; ?>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Navigation Logo is clickable, uncomment this to use back
+            <?php echo Tag::linkTo(array('#',  Tag::imageInput(array("src" => "/privacyplatform/img/logo_nav.jpg",
+                'style' => 'height:40px;margin-top:-5px;float:left;width:70px;border:0')), 'class' => 'navbar-brand'))?>
+                -->
+
+            <?php echo Tag::imageInput(array("src" => "/privacyplatform/img/logo_nav.jpg", 'class' => 'logo-brand'))?>
+        </div>
+        <?php echo $this->elements->getMenu($this, $mt) ?>
+    </div>
+</nav>
+
+<div class="container optimize"">
+    <?php echo $this->getContent() ?>
+</div>
+<footer class="panel-footer">
+<div class="container">
+    <span class = "text-muted">
+        © 2017 Privacy Platform. <?php echo $mt["AllRightsReserved"] ?>
+    </span>
+    <span class = "pull-right">
+<span class = "text-muted"><?php echo $mt['changeLang'] ?>: <?php echo Tag::linkTo("index/language/en", "English") ?>  | <?php echo Tag::linkTo("index/language/de", "Deutsch") ?> </span>
+&nbsp;   
+ <span class = "text-muted"><?php echo Phalcon\Tag::linkTo(array('about/index', 'Privacy')) ?> </span>
+&nbsp;
+    <span class = "text-muted"><?php echo Tag::linkTo(array('imprint/index', 'Imprint')) ?> </span>
+        </span>
+</div>
+</footer>
+
+

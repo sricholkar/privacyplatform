@@ -1,0 +1,58 @@
+<?php use Phalcon\Tag as Tag ?>
+<?php echo $this->getContent() ?>
+
+
+<?php echo Tag::form(array(
+    'surveygenerator/generate',
+    'class' => 'form-horizontal',
+)) ?>
+<input type="hidden" name="surveyname" value="<?php echo $surveyName?>">
+<input type="hidden" name="totalquestions" value="<?php echo $totalquestions?>">
+<table class="table table-bordered table-striped" align="right" style="color:black">
+    <thead>
+        <tr>
+            <td><h4>Question</h4></td>
+	    <td><h4>Importance</h4></td>
+	    <td><h4>Scale</h4></td>
+	    <td><h4>Recommended Group</h4></td>
+	    <td><h4>Value</h4></td>
+        </tr>
+    </thead>
+
+    <tbody>
+	<?php for( $x=0; $x < $totalquestions; $x++){?>
+	<tr>
+	<td>
+	<div class="control-group">
+            <div class="controls">
+                <?php echo Tag::textField(array("question$x", 'class' => 'span6')) ?>
+            </div>
+        </div></td>
+	<td>
+	<input  type="radio"  name="<?php echo 'importance'.$x?>" value="*" title="1" id="input_1"/>Yes
+	<input  type="radio"  name="<?php echo 'importance'.$x?>" value="" title="1" id="input_1" />No
+	</td>
+	<td>
+	<div class="control-group">
+            <div class="controls">
+                <?php echo Tag::textField(array("scale$x", 'maxlength' => '2','class' => 'span1')) ?>
+            </div>
+        </div></td>
+	<td>
+	<div class="control-group">
+            <div class="controls">
+                <?php echo Tag::textField(array("group$x", 'class' => 'span2')) ?>
+            </div>
+        </div></td>
+	<td>
+        <input  type="radio"  name="<?php echo 'value'.$x?>" value="Y" title="1" id="input_1" />Yes
+	<input  type="radio"  name="<?php echo 'value'.$x?>" value="" title="1" id="input_1" />No
+        </td></tr>
+       <?php } ?>
+	<tbody>
+</table>
+<div class="form-actions">
+            <?php echo Tag::submitButton(array('Generate', 'class' => 'btn btn-primary btn-large')) ?>
+        </div>
+    </fieldset>
+</form>

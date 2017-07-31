@@ -1,0 +1,62 @@
+<?php //echo $this->elements->getTabs(); ?>
+<div align="center">
+    <?php echo $this->getContent() ?>
+</div>
+
+<?php use Phalcon\Tag as Tag; ?>
+
+<ul class="pager">
+    <li class="previous pull-left">
+        <?php echo Tag::linkTo(array("admin", "&larr; Go Back")) ?>
+    </li>
+</ul>
+
+<div class = "container" id="container" style = "margin-top: 40px;">
+    <h3 style="float: left"><b>Privacy Personality Test: Following are the questions in this gadget</b></h3>
+</div>
+
+<div style="right: 160px;position: absolute">
+    <?php echo Tag::linkTo(array("adminprivacypersonalitytest/new", "Question", "class" => "glyphicon glyphicon-plus add-ques", "style" => "font-size:15px")) ?>
+</div>
+<br><br>
+<table class="table table-bordered table-striped" align="center" style="color:black">
+    <thead>
+    <tr>
+        <td><h4>ID</h4></td>
+        <td><h4>Question</h4></td>
+        <td><h4></h4></td>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach($questions as $question){ ?>
+    <tr>
+        <?php
+        //variable to show the hide or show string
+        if(!$question->hide ==0) $value = "show";
+        else $value = "hide";?>
+        <td><p><?php echo $question->id;?></td>
+        <td><p><?php echo $question->questions. '  </br>';?>
+                <?php echo $question->questionseng. '  </br>';?>
+        </td>
+        <td width="26%" style="text-align: center"><?php echo Tag::linkTo(array("adminprivacypersonalitytest/edit/".$question->id, '&thinsp;Edit  ', "class" => "glyphicon glyphicon-edit ques-edit")) ?>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="font-size: 12px;" class="ques-del glyphicon glyphicon-trash white">&thinsp;Delete</div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php if($value =='show')echo Tag::linkTo(array("adminprivacypersonalitytest/hide/".$question->id."/".!$question->hide, '&thinsp;'.$value, "class" => "glyphicon glyphicon-eye-open"));
+            else echo Tag::linkTo(array("adminprivacypersonalitytest/hide/".$question->id."/".!$question->hide, '&thinsp;'.$value, "class" => "glyphicon glyphicon-eye-close hide-ques"));?></td>
+    <tr>
+        <?php }?>
+    </tbody>
+</table>
+<!--A pop-up appears when delete is clicked-->
+<div class = "confirm">
+    <div class="closex"></div>
+    <div class= "confirm-dialogue"><b> Are you sure you want to delete the feedback?</b></div>
+
+    <div class="confirm-button">
+        <?php echo Tag::linkTo(array("adminprivacypersonalitytest/delete/".$question->id, '&thinsp;Delete', "class" => "btn btn-danger ques-del")) ?>
+        <?php echo Tag::submitButton(array('Cancel', "class" => "cancel btn btn-default")) ?>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,288 @@
+<?php use Phalcon\Tag as Tag; ?>
+<?php //echo $this->getContent() ?>
+<br />
+<?php $i=1;?>
+    <p><?php echo Tag::linkTo(array("gadgets/index", $t['&laquo; Back'], 'class' => 'btn btn-primary btn-large  btn-success')) ?></p>
+<br><br>
+	<?php echo Tag::form(array("privacypersonalitytest/submit")) ?>
+    <?php
+         foreach($questions as $question){ $group="answer$i";
+    ?>
+    <div class="jumbotron">
+        <div class="w3-row">
+            <div class="w3-half">
+                <input type="hidden" name="<?php echo 'question'.$i ?>" value="<?php echo $question->questions ?>"/>
+	            <font color="red" size="4">
+	<?php if ($language == 'en') echo 'Question '.$i." : ";
+	else echo 'Frage '.$i." : ";?>	
+	            </font>
+                <font  size="2">
+	<?php 
+	//check the language	
+	if ($language == 'en'){
+             echo $question->questionseng. '  </br>';}
+	else echo $question->questions. '  </br>';?>
+	            </font>
+            </div>
+	    <div class="col-md-6  horizontal-scroll">
+	            <table cellpadding="5" cellspacing="0" style="color:#808080;" >
+                    <tr class="ex3" >
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th align="center">
+                            <label for="input_0"> 0 </label>
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th align="center">
+                            <label for="input_1"> 1 </label>
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th align="center">
+                            <label for="input_2"> 2 </label>
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th align="center">
+                            <label for="input_3"> 3 </label>
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th align="center">
+                            <label for="input_4"> 4 </label>
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th align="center">
+                            <label for="input_5"> 5 </label>
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th align="center">
+                            <label for="input_6"> 6 </label>
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th align="center">
+                            <label for="input_7"> 7 </label>
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th align="center">
+                            <label for="input_8"> 8 </label>
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th align="center">
+                            <label for="input_9"> 9 </label>
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th align="center">
+                            <label for="input_10"> 10 </label>
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th>
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+			<tr>
+                        </tr>
+                    </tr>
+                    <tr>
+                        <td>
+	<?php if ($language == 'en') echo "<label for='input_1' style='font-size:15.2px'> Strongly<br />disagree </label>";
+	else echo "<label for='input_1' style='font-size:15.2px'> Sehr unwichtig </label>";?>
+                          
+                        </td>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <td align="center">
+                            <input  type="radio"  name="<?php echo $group?>" value="0" title="0" id="input_0" />
+                        </td>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <td align="center">
+                            <input  type="radio"  name="<?php echo $group?>" value="1" title="1" id="input_1" />
+                        </td>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <td align="center">
+                            <input type="radio"  name="<?php echo $group?>" value="2" title="2" id="input_2" />
+                        </td>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <td align="center">
+                            <input type="radio" name="<?php echo $group?>"  value="3" title="3" id="input_3" />
+                        </td>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <td align="center">
+                            <input type="radio"  name="<?php echo $group?>" value="4" title="4" id="input_4" />
+                        </td>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <td align="center">
+                            <input  type="radio" name="<?php echo $group?>" value="5" title="5" id="input_5" />
+                        </td>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <td align="center">
+                            <input  type="radio"  name="<?php echo $group?>" value="6" title="6" id="input_6" />
+                        </td>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <td align="center">
+                            <input type="radio"  name="<?php echo $group?>" value="7" title="7" id="input_7" />
+                        </td>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <td align="center">
+                            <input type="radio"  name="<?php echo $group?>" value="8" title="8" id="input_8" />
+                        </td>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <td align="center">
+                            <input type="radio"  name="<?php echo $group?>" value="9" title="9" id="input_9" />
+                        </td>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+                        <td align="center">
+                            <input type="radio"  name="<?php echo $group?>" value="10" title="10" id="input_10" />
+                        </td>
+                        <th >
+                            &emsp;
+                        </th>
+                        <th >
+                            &emsp;
+                        </th>
+
+                        <td>
+	<?php if ($language == 'en') echo "<label for='input_1' style='font-size:15.2px'> Strongly<br />agree </label>";
+	else echo "<label for='input_1' style='font-size:15.2px'> Sehr wichtig </label>";?>
+                 
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+            <?php $i=$i+1;}?>
+<?php
+function random() {
+    return (float)rand()/(float)getrandmax();
+}
+$x = random();?>
+<input name="random" type="hidden" value=<?php echo $x;?> />
+<?php if ($auth== false && $x <= 0.2){?>
+	<div class="g-recaptcha g-responsive" data-sitekey="6Lfx1hUUAAAAAKsckgIl4_IYG9P-NN2LZR3jncRL">Please check the captcha form</div>
+<br><br><br><br><br><br><?php }?>
+    <div class='ex5' >
+	<?php if ($language == 'en') echo "<button id='input_2' type='submit'  class='btn btn-primary btn-large btn-success pull-right'><b>Submit</b></button>";
+	else echo "<button id='input_2' type='submit'  class='btn btn-primary btn-large btn-success pull-right'><b>Einreichen</b></button>";?>
+    </div>
+<br><br>
+<br> <br>
+<br> <br>
+
+      
+
+
+
+

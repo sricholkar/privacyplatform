@@ -1,0 +1,25 @@
+<?php use Phalcon\Tag as Tag; ?>
+
+<div class = "container" id="container" style="margin-top: 40px">
+    <h3><b>Currently available gadgets are as follows:</b></h3></br>
+</div>
+
+<table class="table table-bordered table-striped" align="center" style="color:black">
+    <thead>
+        <tr>
+            <td><h4>Gadgets</h4></td>
+            <td><h4>Information</h4></td>
+        </tr>
+    </thead>
+    <tbody>
+	<tr>
+            <td><p><?php echo Tag::linkTo(array("surveygenerator/index", " Survey Generator", "class" => "btn btn-primary btn-success")) ?></p></td>
+            <td>This gadget will generate surveys</td>
+        </tr>
+	<!--<tr>
+            <td><p><?php echo Tag::linkTo(array("surveygenerator2/index", " Survey Generator 2", "class" => "btn btn-primary btn-success")) ?></p></td>
+            <td>This gadget will generate advance surveys with question presented in sections</td>
+        </tr>-->
+    </tbody>
+</table>
+

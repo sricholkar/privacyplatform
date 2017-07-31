@@ -1,0 +1,32 @@
+<?php use Phalcon\Tag as Tag; ?>
+<?php //echo $this->elements->getTabs(); ?>
+<?php echo Tag::form("adminprivacypersonalitytest/create") ?>
+
+<ul class="pager">
+    <li class="previous pull-left">
+        <?php echo Tag::linkTo(array("adminprivacypersonalitytest/index", "&larr; Go Back")) ?>
+    </li>
+</ul>
+
+<?php echo $this->getContent() ?>
+
+<div class="center scaffold">
+    <h3>Add a new question</h3><br>
+</div>
+
+<form>
+    <div class="container form-group">
+        <label class="control-label col-md-2" style="float: left; font-size: 16px" for="question">Deutsch</label>
+        <div class = "controls col-md-7">
+            <?php echo Tag::textField(array("question", "size" => "300","maxlength" => 300,"class" => "form-control")) ?>
+        </div></br></br></br>
+        <label class="control-label col-md-2" style="float: left; font-size: 16px" for="questionEng">English</label>
+        <div class = "controls col-md-7">
+            <?php echo Tag::textField(array("questionEng", "size" => "300","maxlength" => 300,"class" => "form-control")) ?>
+        </div>
+
+            <?php echo Tag::submitButton(array("Save", "class" => "btn btn-primary")) ?>
+    </div>
+</form>
+
+

@@ -1,0 +1,35 @@
+<?php use Phalcon\Tag as Tag; ?>
+<?php //echo $this->elements->getTabs(); ?>
+    <?php echo $this->getContent() ?>
+
+<?php echo Tag::form("adminprivacypersonalitytest/save") ?>
+
+<ul class="pager">
+    <li class="previous pull-left">
+        <?php echo Tag::linkTo(array("adminprivacypersonalitytest", "&larr; Go Back")) ?>
+    </li>
+    <li class="pull-right">
+        <?php echo Tag::submitButton(array("Save", "class" => "btn btn-success")) ?>
+    </li>
+</ul>
+
+
+
+<div class="container pull-left">
+    <h2>Edit question</h2>
+
+    <input type="hidden" name="id" id="id" value="<?php echo $id ?>" />
+
+    <div class="container center" style="position: relative ; top: 20px">
+        <tr>
+            <td><label for="question" class="col-md-2">Deutsch</label></td>
+        <td><?php echo Tag::textField(array("question", "size" => "300","maxlength" => 300,"class" => "col-md-offset-1 col-md-6")) ?> </td></br></br>
+        </tr>
+        <tr>
+            <td><label for="question" class="col-md-2">English</label></td>
+        <td><?php echo Tag::textField(array("questionEng", "size" => "300","maxlength" => 300,"class" => "col-md-offset-1 col-md-6")) ?></td>
+        </tr>
+    </div>
+    </form>
+</div>
+

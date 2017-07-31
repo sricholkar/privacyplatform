@@ -1,0 +1,40 @@
+<?php use Phalcon\Tag as Tag; ?>
+
+<div class="adminGadgets" id="container">
+    <div class = "row" style="color:#a94442">
+        <div align="center" class="col-md-3 col-lg-3 col-sm-3"><h3>Gadgets</h3></div>
+        <div class="col-md-9 col-lg-9 col-sm-9"><h3><?php echo $t["Information"]?></h3></div>
+    </div><br />
+
+
+    <nav class="col-md-3">
+        <ul style="list-style-type: none;margin: 0; padding: 0">
+            <?php
+            foreach($gadgets as $gadget){
+            $link= str_replace(' ', '',strtolower($gadget->name))?>
+        <li align="center" class = "gadget" style="padding: 8px 16px;"><a><?php echo $gadget->name;?></a></li>
+            <?php }?>
+    </nav>
+    <div class="col-md-9" ">
+        <?php
+        foreach($gadgets as $gadget){
+            $link= str_replace(' ', '',strtolower($gadget->name))?>
+            <div class="gadgetInfo" style="padding-left: 5%; display: none">
+                <?php //if language is 'de' then read column information_de else read information
+                if ($language == 'de'){?>
+                        <td><?php echo $gadget->information_de;?></td>
+                <?php }
+                else {?>
+                <td><?php echo $gadget->information;?></td>
+                <?php } ?>
+
+                <?php //echo $gadget->information;?>
+                <br>
+                <div class="pull-left"><?php echo Tag::linkTo(array("admin".$link."/index", $t['&thinsp;Edit'], "class" => "glyphicon glyphicon-edit gadget-edit")) ?>
+                </div>
+            </div>
+    <?php }?>
+
+</div>
+
+

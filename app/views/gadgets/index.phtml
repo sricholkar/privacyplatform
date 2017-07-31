@@ -1,0 +1,57 @@
+<?php use Phalcon\Tag as Tag; ?>
+
+<div class="gadgets-index">
+
+    
+
+        <?php   foreach($gadgets as $gadget) 
+
+        {?>
+        <div class="each-gadget">
+
+        <div>
+        <?php 
+        echo Tag::imageInput(
+            [
+                                "src" => "/privacyplatform/img/matri.jpg",
+                                "class" => "gadget-image",
+                                "alt" => "gadgetImage"
+            ]
+        );?>
+        </div>
+        <div class = "gadget-container">
+        <div class="gadget_name">
+
+
+        <?php   if ($gadget->generatedby == "SurveyGenerator")
+                {?>
+                    <h4><b><?php echo Tag::linkTo([strtolower(str_replace(" ", "",$gadget->name)) . "/continue/De", $gadget->name,"class" => "gadgets"]); ?></b></h4>
+
+                <?php }else{ ?>
+<!--     Popup version..     <td> <a><div class ="recommendator">  --><?php //echo $gadget->name ?><!--</div></a></td>-->
+                <h4><b><?php echo Tag::linkTo([strtolower(str_replace(" ", "",$gadget->name)) . "/continue/De",
+                                                                    $gadget->name,
+                                                                    "class" => "gadgets"]); ?></b></h4>
+
+                <?php }?>
+                                    </div>
+
+    <div class ="gadget_info">
+          <?php //if language is 'de' then read column information_de else read information
+        
+        if ($language == 'de'){?>
+            <?php echo $gadget->information_de;?>
+        <?php }
+        else {?>
+                <?php echo $gadget->information;?>
+        <?php } ?>
+    </div>
+    </div>
+    </div>
+<hr class="gadget-style">
+
+        <?php }?>
+    
+
+</div>
+

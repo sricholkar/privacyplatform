@@ -1,0 +1,77 @@
+<?php use Phalcon\Tag as Tag ?>
+<?php echo Tag::form(array("surveyreader/submit")) ?>
+<?php $i=1;?>
+
+<p><?php echo Tag::linkTo(array("surveyreader/index?gadget=$gadget", $gadget, 'class' => 'btn btn-primary btn-large  btn-success')) ?></p>
+    	<div class="ex2">	  
+
+	
+	<?php //send gadget name with the form for database saving?>
+	<input type="hidden" name="gadget" value="<?php echo $gadget?>"/>
+	<?php //send the total questions displayed?>
+	<input type="hidden" name="totalquestions" value="<?php echo count($rows); ?>"/>
+	<?php	
+	//foreach row present the quesion, if participent group is there then mention it in brackets, 
+	//if value is there then show a box, if scale is there then show the scale
+         foreach($rows as $row){ $group="answer$i";?>
+	<input type="hidden" name="<?php echo 'question'.$i ?>" value="<?php echo $row->question ?>"/>	
+	<label  id="label_24" for="input_24"><b>
+	<font color="red" size="4">	   	
+	    <?php echo 'Question '. $row->id." : ";?>
+	</font>
+	<font  size="2">
+            <?php echo "   $row->question  ";?> 
+	    <?php if ($row->group != ""){
+		  	echo "<font size='1'> (recommended for: $row->group )</font>";
+		  }
+		  if ($row->important !=""){
+			echo "<font color='red'> $row->important </font>";?>
+			
+			<input type="hidden" name="<?php echo 'important'.$i ?>" value="<?php echo $row->important ?>"/>
+		  <?php }
+		  if ($row->value != ""){
+                  	echo Tag::textField(array("value$i", 'maxlength' => '3','class' => 'span1'));
+		  }
+		  if ($row->scale){?>
+	</br>
+	</font>
+	</br></label>
+	<table cellpadding="5" cellspacing="0" style="color:#808080;" >
+            <tr class="ex3" >
+              <th >
+                &nbsp;
+              </th>
+	   <?php for ($x=1; $x<=$row->scale; $x++){ ?>
+              <th align="center">
+                <label for="input_1"> <?php echo $x; ?></label>
+              </th>
+           <?php } ?>
+              <th>
+                &nbsp;
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <label for="input_1" style="font-size:15.2px"> Strongly<br />disagree </label>
+              </td>
+	  <?php for ($x=1; $x<=$row->scale; $x++){ ?>
+              <td align="center">
+                <input  type="radio"  name="<?php echo $group?>" value="<?php echo $x; ?>" title="<?php echo $x; ?>" id="input_<?php echo $x; ?>" />
+              </td>
+           <?php }?>
+              <td>
+                <label for="input_7" style="font-size:15.2px">    Strongly <br />agree  </label>
+              </td>
+            </tr>
+          </table>
+           <b></br></br></br>
+           <?php }?>
+	<?php $i=$i+1;}?>
+	
+	</div>
+<div class='ex5' >
+    	 	<button id="input_2" type="submit"  class="btn btn-primary btn-large btn-success pull-right"><b>Submit</b></button>
+
+</div>	
+
+

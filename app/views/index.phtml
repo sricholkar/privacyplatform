@@ -1,0 +1,28 @@
+<?php use Phalcon\Tag as Tag; ?>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta http-equiv="content-type" content="text/html"; charset="UTF-8">
+    <?php echo Tag::getTitle() ?>
+    <link rel="shortcut icon" type="image/x-icon" href="/privacyplatform/img/favicon.ico" />
+    <?php echo Tag::stylesheetLink('css/3.3.7/bootstrap.css') ?>
+    <?php echo Tag::stylesheetLink('css/font-awesome-4.7.0/css/font-awesome.min.css') ?>
+    <?php echo Tag::stylesheetLink('css/w3.css') ?>
+    <?php echo Tag::stylesheetLink('css/style.css') ?>
+    <?php echo Tag::stylesheetLink('css/recommendator.css') ?>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Platforms">
+    <meta name="author" content="Behttani">
+</head>
+<body class = "body-container">
+<div class="overlay-grey"></div>
+<div style="margin-bottom: 80px">
+<?php echo $this->getContent() ?>
+</div>
+<?php echo Tag::javascriptInclude('js/jquery-3.1.1.js') ?>
+<?php echo Tag::javascriptInclude('js/3.3.7/bootstrap.js') ?>
+<?php echo Tag::javascriptInclude('js/utils.js') ?>
+<?php echo Tag::javascriptInclude('js/confirmation.js') ?>
+</body>
+</html>

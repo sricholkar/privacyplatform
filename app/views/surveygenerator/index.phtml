@@ -1,0 +1,37 @@
+<?php use Phalcon\Tag as Tag; ?>
+<?php echo $this->getContent() ?>
+<div class="page-header">
+    <h2>Generate Survey</h2>
+</div>
+<?php echo Tag::form(array(
+    'surveygenerator/next',
+    'class' => 'form-horizontal',
+)) ?>
+<div style="top:20px; position:relative">
+<form>
+	<div class="form-group">
+            <label class="control-label col-md-3" for="name">Name of the survey:</label>
+            <div class="controls col-md-6">
+                <?php echo Tag::textField(array('surveyname', 'class' => 'input-xlarge form-control')) ?>
+                <p class="help-block">(required)</p>
+            </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3" for="email">Number of questions:</label>
+        <div class="controls col-md-6">
+            <?php echo Tag::textField(array('totalquestions', 'class' => 'input-xlarge form-control')) ?>
+            <p class="help-block">(required)</p>
+        </div>
+    </div>
+	<div class="form-group">
+            <label class="control-label col-md-3" for="info">Information:</label>
+            <div class="controls  col-md-6">
+                <?php echo Tag::textArea(array('information', 'rows=10','style= margin: 0px; height: 173px; width: 391px','class' => 'field form-control col-md-6')) ?>
+                <p class="help-block">(required)</p>
+            </div>
+        </div>
+	<div class="form-actions">
+            <?php echo Tag::submitButton(array('Next', 'class' => 'btn btn-primary btn-large', 'style' => 'right:280px; position:absolute;')) ?>
+        </div>
+</form>
+</div>

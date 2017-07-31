@@ -1,0 +1,60 @@
+<div id="load">
+    <div id="loading"></div>
+    <div id="loading-text" style="margin-top: 28%;text-align: center; font-size: 20px;margin-left: 1%">Loading...</div>
+</div>
+<div style="background-color: #eeeeee; width:80%; height:70% ;margin: 10% 0 0 0; border-radius: 15px; position: absolute;  bottom: 15%" >
+ 	<div class="container">   
+        <?php
+
+           // if ($auth == false) {
+           //     echo "<br><br>UserID= $userid, Username= $username, Attempt= $attempt<br><br>";
+           // } else {
+             //   echo "<br><br>UserID= $userid, Username= $username, Attempt= $attempt<br><br>";
+           // }
+          
+            echo "<h6>"; echo $t["From the given answers, the user belongs to the category of "]; echo "<b> $userType </b></h6>";
+            echo "<h6><b>$userType </b>";echo $t[" belong to the main category of "]; echo "<b> $majorGroup </b></h6>";?>
+
+            <table class="table table-sm"  align="left" style="color:black" >
+                 <thead>
+                         <tr>
+                                 <td><h4><?php echo $t["Main category"]?></h4></td>
+                                 <td><h4><?php echo $t["Percentage"]?></h4></td>
+                         </tr>
+                 </thead>
+                <tbody>
+           <?php
+           foreach($userMainPercentage as $userCategory){?>
+                        <tr>
+                                <td><?php echo "$userCategory->main_category";?>    </td>
+                                <td><?php echo "$userCategory->Percentage %";}?> </td>
+                        </tr>
+                </tbody>
+          </table>
+
+	
+
+
+           <?php  echo "<h6>"; echo $t["The percentage of users in the subcategories of "];echo "<b>$majorGroup</b>";echo $t[" is as follows:"];echo "</h6>";?>
+	    <table class="table table-sm"  align="left" style="color:black" >
+   	   	 <thead>
+       			 <tr>
+           			 <td><h4><?php echo $t["Subcategory"]?></h4></td>
+           			 <td><h4><?php echo $t["Percentage"]?></h4></td>
+       			 </tr>
+   		 </thead>
+    		<tbody>
+	   <?php
+	   foreach($userSubPercentage as $userCategory){?>
+	   		<tr>
+				<td><?php echo "$userCategory->category";?>    </td>
+				<td><?php echo "$userCategory->Percentage %";}?> </td>
+			</tr>
+		</tbody>
+	  </table>
+
+
+ 
+   </div>
+</div>
+

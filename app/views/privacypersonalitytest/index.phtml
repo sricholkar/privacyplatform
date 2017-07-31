@@ -1,0 +1,14 @@
+<?php use Phalcon\Tag as Tag; ?>
+<div class="jumbotron"  style="margin-top: 80px">
+
+    <h3><b>Privacy Personality Test:</b></h3></br>
+    <div>
+    <p><h4><b><?php echo $t["Disclaimer"]?></b></h4></p></br>
+     <?php echo $t["This is a survey related to user's privacy, upon completing the survey the system will provide the most suitable devices recommended for the users. On some pages you have the possibility to enter personal or business data (e. g. e-mail addresses, names, postal addresses, etc.). The disclosure of this data is voluntary. If technically feasible and where reasonable, all services offered can be used without disclosing personal information or by use of anonymised data or aliases."]?> <b><?php echo $t["This survey is conducted for educational purpose only. None of the provided user data will be use for commercial purposes"]?></b>.
+
+	<br><br>
+    	Click <b>continue</b>, if you want to use the Platform.  </br></br>
+	<p><?php echo Tag::linkTo(array('privacypersonalitytest/continue/De', 'Continue', 'class' => 'btn btn-primary btn-large')) ?></p>
+	</div>
+</div>
+</br></br></br></br></br></br>

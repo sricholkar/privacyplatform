@@ -1,0 +1,38 @@
+<?php use Phalcon\Tag as Tag; ?>
+
+<div class="container" id="container" style="margin-top: 40px;">
+    <h2><b>Feedbacks</b></h2></br>
+	<?php foreach($feedbacks as $feedback){ ?>
+    <div style="background-color:rgba(164, 126, 60, 0.2) !important" class="jumbotron container jumbo-color table-responsive">
+        <table>
+            <tr>
+                <td align="center" class="glyphicon glyphicon-user" style="font-size: xx-large;" ></td>
+
+                <td style="padding-left: 30px">
+                    <span style="font-weight: bold"><?php echo $feedback->email;?></span>
+                    <div style="color: #5e5e5e">on <?php echo date_format(date_create($feedback->created_at), 'F j, Y, g:i a' );?></div>
+                </td>
+
+            </tr>
+            <tr><td>&emsp14;</td></tr>
+            <tr>
+                <td></td>
+                <td style="padding-left: 30px"><?php echo $feedback->comments;?></td>
+                <div style="font-size: 12px;" class="delete-glyph glyphicon glyphicon-trash btn white pull-right">&thinsp;Delete</div>
+            </tr>
+        </table>
+    </div>
+    <?php }?>
+    
+<div class = "confirm">
+    <div class="closex"></div>
+<div class= "confirm-dialogue"><b> Are you sure you want to delete the feedback?</b></div>
+
+    <div class="confirm-button">
+        <?php echo Tag::linkTo(array("feedback/delete/".$feedback->id, 'Delete', "class" => "del-fb btn btn-danger")) ?>        &emsp;
+        <?php echo Tag::submitButton(array('Cancel', "class" => "cancel btn btn-default")) ?>
+    </div>
+</div>
+
+</div>
+

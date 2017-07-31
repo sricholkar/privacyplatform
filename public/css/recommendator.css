@@ -1,0 +1,147 @@
+div.ex1{
+	border-bottom-style: solid;
+	border-bottom-color: red;
+	margin-top: 50px;
+	margin-bottom: 10px;
+	margin-right: 400px;
+	margin-left: 190px; 
+}
+div.ex2 { height:50px; /* or whatever width you want. */
+   max-height:50px; /* or whatever width you want. */
+   
+	margin-top: 50px;
+	margin-bottom: 40px;
+	margin-right: 200px;
+	margin-left: 250px;   
+}
+
+div.ex4 {
+	/*margin-right: 200px;*/
+	/*margin-left: 250px; */  
+}
+div.ex5 {
+	margin-right: 40px;
+	margin-left: 40px;   
+}
+div.ex6 {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-right: 400px;
+	margin-left: 470px;   
+}
+tr.border_bottom td{
+	border-bottom:1pt solid black;
+}
+
+.table {
+	border-collapse: collapse; 
+	margin-left: 30px;
+	margin-bottom: 4px;
+	color:#7373E5;
+    
+}
+tr.ex3{
+
+	border-bottom:1pt solid #808080;
+	margin-bottom: 100px;
+}
+
+
+div button {
+	padding: 12px 26px;
+	border:none;
+	margin-bottom: 60px;
+	cursor: pointer;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+}
+.buttonnext {border-radius: 10px;float: right;
+	margin-right:150px;
+}
+.buttonnext:hover {
+	background-color: #4CAF50;
+	color: white;
+}
+.buttonback {border-radius: 10px;float: left;
+	margin-left:-70px;
+}
+.buttonback:hover {
+	background-color: #5D6D7E;
+	color: white;
+}
+
+.buttonzul {
+	border-radius: 10px;
+}
+.buttonzul:hover {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.all-rounded {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+}
+    
+.spacer {
+        display: block;
+}
+    
+#progress-bar {
+        width: 100px;
+        background: #cccccc;
+        position: relative;
+}
+    
+#progress-bar-percentage {
+        background: #4CAF50;
+        padding: 5px 0px;
+        color: #FFF;
+        text-align: center;
+        height: 12px;
+}
+
+    #progress-bar-percentage span {
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+
+input[type="radio"]
+{
+	cursor: pointer;
+}
+
+#name_alert {
+	display: none;
+}
+
+#email_alert {
+    display: none;
+}
+
+#username_alert {
+    display: none;
+}
+
+#birthday_alert {
+    display: none;
+}
+
+#gender_alert {
+    display: none;
+}
+
+#password_alert {
+    display: none;
+}
+
+#repeatPassword_alert {
+    display: none;
+}
+
+.alert-error {
+    color: rgba(255, 0, 0, 0.9);
+}

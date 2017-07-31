@@ -1,0 +1,65 @@
+<?php use Phalcon\Tag as Tag; ?>
+
+<?php echo $this->getContent() ?>
+
+<div class="profile container" style="margin-top: 50px">
+    <?php echo Tag::form(array('admin/profile', 'name' => 'profileForm', 'id' => 'profileForm', 'onbeforesubmit' => 'return false')) ?>
+    <div class="form-group row">
+        <label class="control-label col-md-3" for="name">Your Full Name:</label>
+        <div class="input col-md-7">
+            <?php echo Tag::textField(array("name", "size" => "35", "class" => "form-control",  "oninput" => "warning();")) ?>
+            <div class="alert" id="name_alert">
+                <strong>Warning!</strong> Please enter your full name
+            </div>
+ 	</div>
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-3" for="email">Email Address:</label>
+        <div class="input col-md-7">
+            <?php echo Tag::textField(array("email", "size" => "35", "class" => "form-control",  "oninput" => "warning();")) ?>
+            <div class="alert" id="email_alert">
+                <strong>Warning!</strong> Please enter your email
+ 	    </div>
+	 </div>
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-3" for="email">Current Password:</label>
+        <div class="input col-md-7">
+            <?php echo Tag::passwordField(array('password', 'class' => 'input-xlarge form-control')) ?>
+            <div class="alert" id="email_alert">
+                <strong>Warning!</strong> Please enter your current password
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-3" for="email">New Password:</label>
+        <div class="input col-md-7">
+            <?php echo Tag::passwordField(array('newpassword', 'class' => 'input-xlarge form-control')) ?>
+            <div class="alert" id="email_alert">
+                <strong>Warning!</strong> Please enter your new password
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-3" for="email">Retype Password:</label>
+        <div class="input col-md-7 ">
+            <?php echo Tag::passwordField(array('repeatpassword', 'class' => 'input-xlarge form-control')) ?>
+            <div class="alert" id="email_alert">
+                <strong>Warning!</strong> Please retype your new password
+            </div>
+        </div>
+    </div>
+    <div class="form-group" style="margin-left:30px;">
+     <!--   <input type="button" value="Update" class="btn btn-primary btn-large btn-info" onclick="Profile.validate()">-->
+	<?php echo Tag::submitButton(array(
+            'Update',
+            'class' => 'btn btn-primary btn-large',
+            'onclick' => 'return Profile.validate();',
+        )) ?>
+        &nbsp;
+    <!--    <?php echo Tag::linkTo('admin/index', 'Cancel') ?> -->
+    </div>
+    </form>
+    <br><br><br><br>
+</div>
+
